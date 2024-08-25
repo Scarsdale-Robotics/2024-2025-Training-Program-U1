@@ -7,7 +7,7 @@ import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 
 // Name your program here (it will show up as an option when we run it on the robot's Driver Hub)
 @TeleOp(name="Totally Amazing TeleOp")
-public class ExampleOpMode extends LinearOpMode {
+public class ExampleTeleOp extends LinearOpMode {
 
     // This override exists because we're writing our own implementation for runOpMode().
     @Override
@@ -32,7 +32,7 @@ public class ExampleOpMode extends LinearOpMode {
         while (opModeIsActive()) {
             // Read Gamepad inputs.
             double rightPower = gamepad1.left_stick_x;
-            double forwardPower = gamepad1.left_stick_y;
+            double forwardPower = -gamepad1.left_stick_y;
             double turnPower = gamepad1.right_stick_x;
 
             // Set the drive powers.
