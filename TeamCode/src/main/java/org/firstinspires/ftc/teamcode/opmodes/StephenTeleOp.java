@@ -21,6 +21,7 @@ public class StephenTeleOp extends LinearOpMode {
         waitForStart();
 
         // Main loop.
+        double speed = 0.5;
         while (opModeIsActive()) {
             // Get the left joystick x position.
             double strafe = gamepad1.left_stick_x;
@@ -33,7 +34,7 @@ public class StephenTeleOp extends LinearOpMode {
             //      Left Joystick X as strafe power
             //      Left Joystick Y as forward power
             //      Right Joystick X as turn power
-            drive.driveRobotCentric(strafe, forward, turn);
+            drive.driveRobotCentric(speed * strafe, speed * forward, speed * turn);
 
         }
 
