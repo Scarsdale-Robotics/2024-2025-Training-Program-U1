@@ -19,11 +19,21 @@ public class AriWorseTeleOp extends LinearOpMode {
                 robot.rightBack
         );
         waitForStart();
+        boolean a = false;
+        double bumpspeed = 0.6;
         while (opModeIsActive()) {
             double strafe = gamepad1.left_stick_x;
             double forward = gamepad1.left_stick_y;
             double turn = gamepad1.right_stick_x;
-            drive.driveRobotCentric(strafe, forward, turn);
+            if (gamepad1.a) {
+                a = !a;
+            }
+            if(a){
+                drive.driveRobotCentric(bumpspeed*strafe, bumpspeed*forward, turn);
+            }
+            else {
+                drive.driveRobotCentric(strafe, forward, turn);
+            }
         }
     }
 }
